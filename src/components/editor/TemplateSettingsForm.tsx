@@ -16,6 +16,41 @@ const TEMPLATES: { id: TemplateId; name: string; tag: string; description: strin
     score: '99% ATS Friendly'
   },
   {
+    id: 'ivy-league',
+    name: 'Ivy League & Academic',
+    tag: 'Academic & Research CV',
+    description: 'Prestigious Harvard / Oxford format with classic serif typography, formal academic credentials, grants, and publications.',
+    score: '99% ATS Friendly'
+  },
+  {
+    id: 'tech-lead',
+    name: 'Tech Lead & Architect',
+    tag: 'Staff / Principal / Cloud',
+    description: 'Engineered for senior developers & architects with architecture highlights, tech stack matrix, and scale metrics.',
+    score: '99% ATS Friendly'
+  },
+  {
+    id: 'startup-founder',
+    name: 'Startup Founder & PM',
+    tag: 'Product & Leadership',
+    description: 'High-impact product management & entrepreneurial resume focused on traction, revenue scale, and roadmap delivery.',
+    score: '98% ATS Friendly'
+  },
+  {
+    id: 'modern-sidebar',
+    name: 'Modern Sidebar Hybrid',
+    tag: 'Contemporary Dual-Tone',
+    description: 'Sleek left meta rail for skills & education with linear ATS DOM reading order to ensure 100% crawler compatibility.',
+    score: '97% ATS Friendly'
+  },
+  {
+    id: 'minimalist-bold',
+    name: 'Minimalist Bold',
+    tag: 'Swiss Typographic',
+    description: 'Stark high-contrast black typography, strong geometric dividers, and spacious distraction-free layout.',
+    score: '99% ATS Friendly'
+  },
+  {
     id: 'finance-corporate',
     name: 'Corporate & Finance',
     tag: 'Banking & Investment',

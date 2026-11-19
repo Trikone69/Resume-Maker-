@@ -86,7 +86,12 @@ export type TemplateId =
   | 'creative-minimal'
   | 'medical-clinical'
   | 'legal-consulting'
-  | 'nordic-clean';
+  | 'nordic-clean'
+  | 'ivy-league'
+  | 'tech-lead'
+  | 'startup-founder'
+  | 'modern-sidebar'
+  | 'minimalist-bold';
 
 export type FontFamily = 
   | 'inter' 

@@ -10,6 +10,11 @@ import { CreativeMinimal } from './CreativeMinimal';
 import { MedicalClinical } from './MedicalClinical';
 import { LegalConsulting } from './LegalConsulting';
 import { NordicClean } from './NordicClean';
+import { IvyLeagueAcademic } from './IvyLeagueAcademic';
+import { TechLeadArchitect } from './TechLeadArchitect';
+import { StartupFounder } from './StartupFounder';
+import { ModernSidebarATS } from './ModernSidebarATS';
+import { MinimalistBold } from './MinimalistBold';
 
 interface Props {
   data: ResumeData;
@@ -23,6 +28,16 @@ export const ResumeRenderer: React.FC<Props> = ({ data, scale = 1, handlers, isE
 
   const renderTemplate = () => {
     switch (template) {
+      case 'ivy-league':
+        return <IvyLeagueAcademic data={data} handlers={handlers} isEditable={isEditable} />;
+      case 'tech-lead':
+        return <TechLeadArchitect data={data} handlers={handlers} isEditable={isEditable} />;
+      case 'startup-founder':
+        return <StartupFounder data={data} handlers={handlers} isEditable={isEditable} />;
+      case 'modern-sidebar':
+        return <ModernSidebarATS data={data} handlers={handlers} isEditable={isEditable} />;
+      case 'minimalist-bold':
+        return <MinimalistBold data={data} handlers={handlers} isEditable={isEditable} />;
       case 'finance-corporate':
         return <FinanceCorporate data={data} handlers={handlers} isEditable={isEditable} />;
       case 'creative-minimal':
@@ -52,7 +67,7 @@ export const ResumeRenderer: React.FC<Props> = ({ data, scale = 1, handlers, isE
   const minHeightPx = isLetter ? 1056 : 1123;
 
   return (
-    <div className="flex justify-center items-start print:block print:w-full print:m-0">
+    <div className="flex justify-center items-start print:block print:w-full print:m-0 print:p-0 print:border-none print:bg-white">
       <div 
         id="resume-document"
         style={{
@@ -61,7 +76,7 @@ export const ResumeRenderer: React.FC<Props> = ({ data, scale = 1, handlers, isE
           transform: scale !== 1 ? `scale(${scale})` : undefined,
           transformOrigin: 'top center',
         }}
-        className="bg-white text-slate-900 shadow-2xl rounded-sm print:shadow-none print:rounded-none print:w-full print:transform-none print:min-h-0 print:m-0 overflow-hidden"
+        className="bg-white text-slate-900 shadow-2xl rounded-sm print:shadow-none print:rounded-none print:w-full print:transform-none print:min-h-0 print:m-0 print:p-0 print:border-none print:border-0 print:outline-none print:bg-white overflow-hidden"
       >
         {renderTemplate()}
       </div>

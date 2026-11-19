@@ -54,7 +54,7 @@ const LOCAL_STORAGE_KEY = 'ats_resume_data_v3';
 const JD_STORAGE_KEY = 'ats_resume_jd_v3';
 
 export const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<'studio' | 'landing'>('studio');
+  const [currentView, setCurrentView] = useState<'studio' | 'landing'>('landing');
 
   const [resumeData, setResumeData] = useState<ResumeData>(() => {
     try {
@@ -266,7 +266,7 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 font-sans">
+    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 font-sans print:bg-white print:p-0 print:m-0">
       {/* Top Navbar */}
       <nav className="no-print bg-slate-900 border-b border-slate-800 px-4 py-2.5 flex items-center justify-between sticky top-0 z-40 backdrop-blur-md">
         {/* Brand / Logo + View Switcher */}
@@ -274,8 +274,8 @@ export const App: React.FC = () => {
           <button
             type="button"
             onClick={() => setCurrentView('landing')}
-            className="flex items-center gap-2 group text-left"
-            title="View Homepage & Template Showcase"
+            className="flex items-center gap-2 group text-left px-2 py-1 -ml-2 rounded-lg hover:bg-slate-800/80 transition"
+            title="Return to Home Page & Template Showcase"
           >
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-sky-900/30 group-hover:scale-105 transition">
               <FileText className="w-5 h-5" />
@@ -287,8 +287,8 @@ export const App: React.FC = () => {
                   <ShieldCheck className="w-3 h-3" /> ATS 100%
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 hidden sm:flex items-center gap-1">
-                <Home className="w-3 h-3 text-sky-400 inline" /> Home / Landing
+              <p className="text-[11px] text-sky-400 font-medium hidden sm:flex items-center gap-1">
+                <Home className="w-3 h-3 inline" /> ← Home & Templates
               </p>
             </div>
           </button>
@@ -385,7 +385,7 @@ export const App: React.FC = () => {
       </div>
 
       {/* Main Dual-Pane Workspace */}
-      <main className="flex-1 flex overflow-hidden">
+      <main className="flex-1 flex overflow-hidden print:overflow-visible print:bg-white print:p-0 print:m-0 print:block">
         {/* LEFT PANE: Editor Panel */}
         <section 
           className={`no-print w-full lg:w-[48%] xl:w-[43%] border-r border-slate-800 flex flex-col bg-slate-900/60 overflow-hidden ${
@@ -502,7 +502,7 @@ export const App: React.FC = () => {
         {/* RIGHT PANE: Live Document Preview with Direct On-Page Editing */}
         <section 
           id="resume-preview-container"
-          className={`flex-1 flex flex-col bg-slate-950 overflow-hidden ${
+          className={`flex-1 flex flex-col bg-slate-950 overflow-hidden print:overflow-visible print:bg-white print:p-0 print:m-0 print:block ${
             mobileView === 'editor' ? 'hidden lg:flex' : 'flex'
           }`}
         >
@@ -567,7 +567,7 @@ export const App: React.FC = () => {
           </div>
 
           {/* Interactive Document Viewport */}
-          <div className="flex-1 overflow-auto p-4 sm:p-8 flex justify-center items-start bg-slate-950/80 relative">
+          <div className="flex-1 overflow-auto p-4 sm:p-8 flex justify-center items-start bg-slate-950/80 relative print:overflow-visible print:bg-white print:p-0 print:m-0 print:block">
             {isDirectEditingEnabled && (
               <div className="no-print absolute top-3 right-5 z-10 px-2.5 py-1 rounded-md bg-slate-900/90 border border-slate-700/80 text-[10.5px] text-slate-400 shadow-md pointer-events-none flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>

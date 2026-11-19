@@ -8,49 +8,86 @@
   }
 }
 
-/* Print Styles for Flawless ATS Vector PDF */
+/* Print Styles for Flawless ATS Vector PDF - Pure White, Zero Borders */
 @media print {
-  html, body {
-    background: white !important;
-    color: black !important;
+  /* Hide all screen-only UI elements */
+  .no-print,
+  nav,
+  header.no-print,
+  aside,
+  button,
+  .modal-backdrop,
+  [role="dialog"] {
+    display: none !important;
+  }
+
+  /* Reset all HTML wrappers and parent containers to pure white, 0 margin, 0 padding, 0 border */
+  html,
+  body,
+  #root,
+  .min-h-screen,
+  main,
+  section,
+  #resume-preview-container,
+  #resume-preview-container > div {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 12pt;
-    line-height: 1.3;
+    border: none !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    outline: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  /* Target resume document container */
+  #resume-document {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    transform: none !important;
+    overflow: visible !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  .no-print {
-    display: none !important;
-  }
-
-  #resume-preview-container {
-    padding: 0 !important;
-    margin: 0 !important;
-    background: white !important;
-    overflow: visible !important;
-    display: block !important;
-  }
-
-  #resume-document {
-    width: 100% !important;
-    min-height: auto !important;
-    max-width: 100% !important;
+  #resume-document > div {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     box-shadow: none !important;
-    border: none !important;
-    transform: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    -webkit-box-shadow: none !important;
+    outline: none !important;
   }
 
+  /* Default clean white PDF page setup without dark browser boundaries */
   @page {
-    margin: 12mm 10mm;
+    margin: 10mm 12mm;
     size: auto;
   }
 
   /* Prevent awkward page cuts */
-  section {
+  section, .resume-section {
     page-break-inside: avoid;
     break-inside: avoid;
   }
